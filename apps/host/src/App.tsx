@@ -1,6 +1,6 @@
 import "./App.css";
 //@ts-expect-error
-import RemoteApp from "remote/RemoteEntry";
+import RemoteApp from "remote.remoteapplication.swalker326/RemoteEntry";
 
 const App = () => {
   return (
