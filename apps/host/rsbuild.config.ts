@@ -1,6 +1,6 @@
 import { defineConfig, RsbuildPlugin } from "@rsbuild/core";
 import { pluginReact } from "@rsbuild/plugin-react";
-import { pluginModuleFederation } from "@module-federation/rsbuild-plugin";
+// import { pluginModuleFederation } from "@module-federation/rsbuild-plugin";
 import { mfConfig } from "./module-federation.config";
 import { withZephyr } from "zephyr-rspack-plugin";
 
@@ -17,5 +17,8 @@ const pluginWithZephyr = (): RsbuildPlugin => {
 };
 
 export default defineConfig({
-  plugins: [pluginReact(), pluginWithZephyr(), pluginModuleFederation(mfConfig)]
+  plugins: [pluginReact(), pluginWithZephyr()],
+  moduleFederation: {
+    options: mfConfig
+  }
 });
